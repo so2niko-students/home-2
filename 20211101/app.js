@@ -16,6 +16,8 @@ const loadDoc = () => {
     xhttp.send();
 }
 
-console.log(1);
-loadDoc();
-console.log(2);
+// console.log(1);
+// loadDoc();
+// console.log(2);
+
+fetch('db.db').then(r => r.text()).then(console.log);
