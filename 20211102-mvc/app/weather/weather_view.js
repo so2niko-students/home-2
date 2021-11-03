@@ -1,10 +1,10 @@
-export default class View{
+export default class WeatherView{
     domStr = [
-        { name : 'place',             selector : '.place'},
-        { name : 'temperature',       selector : '.temperature'},
-        { name : 'weatherIcon',       selector : '.weatherIcon'},
-        { name : 'weatherCondition',  selector : '.weatherCondition'},
-        { name : 'date',              selector : '.date'}
+        { name : 'place',             selector : '.weather .place'},
+        { name : 'temperature',       selector : '.weather .temperature'},
+        { name : 'weatherIcon',       selector : '.weather .weatherIcon'},
+        { name : 'weatherCondition',  selector : '.weather .weatherCondition'},
+        { name : 'date',              selector : '.weather .date'}
     ];
 
     linkDOMElements(){

@@ -1,4 +1,4 @@
-export default class Model{
+export default class WeatherModel{
     cityAPI = 'http://ip-api.com/json';
     weatherAPI = 'https://api.openweathermap.org/data/2.5/weather';
     weatherAPIKey = 'a34a6cba2483a2867968ae2f62ed684e';

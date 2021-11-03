@@ -8,17 +8,37 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="widget">
-        <div class="weatherIcon"></div>
-        <div class="weatherInfo">
-          <div class="temperature"><span></span></div>
-          <div class="description">    
-            <div class="weatherCondition"></div>    
-            <div class="place" contenteditable="true"></div>
-          </div>
-        </div>
-        <div class="date"></div>
-      </div>
-    <script src="app/main.js" type="module"></script>
+<div class="widget weather">
+  <div class="weatherIcon"></div>
+  <div class="weatherInfo">
+    <div class="temperature"><span></span></div>
+    <div class="description">    
+      <div class="weatherCondition"></div>    
+      <div class="place" contenteditable="true"></div>
+    </div>
+  </div>
+  <div class="date"></div>
+</div>
+<div class="widget">
+  <div class="weatherIcon">
+    <select id="exch-select">
+      <option value="usd">usd</option>
+      <option value="eur">eur</option>
+      <option value="rur">rur</option>
+      <option value="btc">btc</option>
+    </select>
+  </div>
+  <div class="weatherInfo">
+    <div class="temperature"><span></span></div>
+    <div class="description">    
+      <div class="weatherCondition exch-name"></div>    
+      <div class="place exch-buy-sale"></div>
+    </div>
+  </div>
+  <div class="date"></div>
+  </div>
+  <!-- TODO: add html-components (render by view) -->
+  <!-- TODO: load and parse data from Google Sheets -->
+<script src="app/main.js" type="module"></script>
 </body>
 </html>

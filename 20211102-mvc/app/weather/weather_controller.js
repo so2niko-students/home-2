@@ -1,10 +1,10 @@
-import Model from "./model.js";
-import View from "./view.js";
+import WeatherModel from "./weather_model.js";
+import WeatherView from "./weather_view.js";
 
-export default class Controller{
+export default class WeatherController{
     constructor(){
-        this.model = new Model();
-        this.view = new View(this.onChangeCity);
+        this.model = new WeatherModel();
+        this.view = new WeatherView(this.onChangeCity);
     }
 
     async init(){
