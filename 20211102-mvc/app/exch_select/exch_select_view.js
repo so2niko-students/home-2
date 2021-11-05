@@ -1,18 +1,14 @@
-export default class ExchSelectView{
+import View from '../common/view.js';
+
+export default class ExchSelectView extends View{
     domStr = [
         { name : 'select',    selector : '#exch-select'}
     ];
 
     constructor(onSelect){
+        super();
         this.linkDOMElements();
         this.dom.select.addEventListener('input', onSelect);
-    }
-
-    linkDOMElements = () => {
-        this.dom = this.domStr.reduce((acc, { name, selector }) => {
-            acc[name] = document.querySelector(selector);
-            return acc;
-        }, {});
     }
 
     getSelectVal = () => this.dom.select.value;

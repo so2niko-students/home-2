@@ -1,18 +1,14 @@
-export default class ExchangeView{
+import View from '../common/view.js';
+
+export default class ExchangeView extends View{
     domStr = [
         { name : 'name',    selector : '.exch-name'},
         { name : 'buySale',    selector : '.exch-buy-sale'}
     ];
 
     constructor(){
+        super();
         this.linkDOMElements();
-    }
-
-    linkDOMElements = () => {
-        this.dom = this.domStr.reduce((acc, { name, selector }) => {
-            acc[name] = document.querySelector(selector);
-            return acc;
-        }, {});
     }
 
     render = ({ ccy, base_ccy, buy, sale }) => {

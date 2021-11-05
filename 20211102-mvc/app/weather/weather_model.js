@@ -1,10 +1,9 @@
+import { cityAPI, weatherAPI, weatherAPIKey } from '../common/config.js';
+
 export default class WeatherModel{
-    cityAPI = 'http://ip-api.com/json';
-    weatherAPI = 'https://api.openweathermap.org/data/2.5/weather';
-    weatherAPIKey = 'a34a6cba2483a2867968ae2f62ed684e';
 
     async loadCity(){
-        const ipResponse = await fetch(this.cityAPI);
+        const ipResponse = await fetch(cityAPI);
         const ipData = await ipResponse.json();
         return ipData.city;
     }
@@ -24,7 +23,7 @@ export default class WeatherModel{
     }
 
     getWeatherLink(city){
-        return `${ this.weatherAPI }?q=${ city }&appid=${ this.weatherAPIKey }`;
+        return `${ weatherAPI }?q=${ city }&appid=${ weatherAPIKey }`;
     }
 
     formatWeather(data, city) {

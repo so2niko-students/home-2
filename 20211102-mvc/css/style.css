@@ -4,6 +4,11 @@
 	 background-color: #a64253;
 	 font-family: Poiret One;
 }
+
+.list{
+	display: flex;
+	flex-wrap: wrap;
+}
  .widget {
 	 /* position: absolute; */
 	 /* top: 50%;

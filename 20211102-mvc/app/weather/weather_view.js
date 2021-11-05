@@ -1,4 +1,6 @@
-export default class WeatherView{
+import View from '../common/view.js';
+
+export default class WeatherView extends View{
     domStr = [
         { name : 'place',             selector : '.weather .place'},
         { name : 'temperature',       selector : '.weather .temperature'},
@@ -7,14 +9,8 @@ export default class WeatherView{
         { name : 'date',              selector : '.weather .date'}
     ];
 
-    linkDOMElements(){
-        this.dom = this.domStr.reduce((acc, { name, selector }) => {
-            acc[name] = document.querySelector(selector);
-            return acc;
-        }, {});
-    }
-
     constructor(onChangeCity){
+        super();
         this.linkDOMElements();
         this.dom.place.addEventListener('blur', onChangeCity);
     }
@@ -30,4 +26,6 @@ export default class WeatherView{
     getPlace(){
         return this.dom.place.textContent;
     }
+
+
 }
