@@ -1,14 +1,14 @@
 import ExchSelectView from "./exch_select_view.js";
+import Observer from "../common/observer.js";
 
 export default class ExchSelectController{
-    constructor(onSelectCurrency){
+    constructor(){
         this.view = new ExchSelectView(this.onSelect);
-        this.onSelectCurrency = onSelectCurrency;
     }
 
     onSelect = () => {
         const currencyName = this.view.getSelectVal();
         console.log('selected', currencyName);
-        this.onSelectCurrency(currencyName);
+        Observer.notify(Observer.events.onSelectCurInfTbl, currencyName);
     }
 }
