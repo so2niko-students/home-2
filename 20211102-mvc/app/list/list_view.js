@@ -1,7 +1,11 @@
+import { card } from './template_card.js';
+
 export default class ListView{
     domStr = [
         { name : 'container', selector : '.list'},
     ];
+
+    html = {};
 
     linkDOMElements(){
         this.dom = this.domStr.reduce((acc, { name, selector }) => {
@@ -10,7 +14,19 @@ export default class ListView{
         }, {});
     }
     constructor(){
+        this.loadTemplate();
         this.linkDOMElements();
+    }
+
+    loadTemplate = () => {
+        this.html.card = card;
+    }
+
+    parser = (html, data) => {
+        return Object.entries(data).reduce((acc, [name, val]) => {
+            const reg = new RegExp(`{{[\\s]*${name}[\\s]*}}`, '');
+            return acc.replace(reg, val);
+        }, html);
     }
 
     render = list => {
@@ -18,19 +34,7 @@ export default class ListView{
         this.dom.container.insertAdjacentHTML('beforeend', listHTML);
     }
 
-    renderCard = ({ id, name, icon, amount}) => {
-        return `<div class="widget">
-        <div class="weatherIcon">
-            ${ icon }
-        </div>
-        <div class="weatherInfo">
-          <div class="temperature"><span>${ name }</span></div>
-          <div class="description">    
-            <div class="weatherCondition"></div>    
-            <div class="place"></div>
-          </div>
-        </div>
-        <div class="date">${ amount }</div>
-        </div>`
+    renderCard = (data) => {
+        return this.parser(this.html.card, data);
     }
 }
