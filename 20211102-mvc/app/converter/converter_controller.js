@@ -17,6 +17,12 @@ export default class ConverterContoller{
     onReceiveExchangeData = (exch) => {
         const { count } = this.view.getData();
         const data = this.model.convert(count, exch);
+        this.sendConverData(data, exch, count);
         this.view.renderExch(data);
+    }
+
+    sendConverData = (data, { ccy, base_ccy }, count) => {
+        const str = `${ count } ${ ccy } = ${ data } ${ base_ccy }`;
+        Observer.notify(Observer.events.sendMsgToTG, str);
     }
 }

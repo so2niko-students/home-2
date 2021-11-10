@@ -7,3 +7,9 @@ export const cityAPI = 'http://ip-api.com/json';
 export const weatherAPI = 'https://api.openweathermap.org/data/2.5/weather';
 
 export const weatherAPIKey = 'a34a6cba2483a2867968ae2f62ed684e';
+
+export const tgToken = '2135170220:AAHW6l9GMH7_7zRUaL6WZ6UeJj8XzlDzF98';
+
+export const tgBase = 'https://api.telegram.org/bot';
+
+export const tgChatId = '194287825';

@@ -23,8 +23,9 @@ export default class Observer{
     }
 
     static events = {
-        onSelectCurInfTbl : 'SELECT CURRENCY. INFO TABLE',
-        onSelectCurConvMen : 'SELECT CURRENCY. CONVERTER MENU',
-        sendCurConvMen : 'SEND CURRENCY. CONVERTER MENU'
+        onSelectCurInfTbl   : 'SELECT CURRENCY. INFO TABLE',
+        onSelectCurConvMen  : 'SELECT CURRENCY. CONVERTER MENU',
+        sendCurConvMen      : 'SEND CURRENCY. CONVERTER MENU',
+        sendMsgToTG         : 'SEND MESSAGE TO TELEGRAM'
     }
 }
