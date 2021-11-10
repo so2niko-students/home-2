@@ -29,3 +29,17 @@ export default class Observer{
         sendMsgToTG         : 'SEND MESSAGE TO TELEGRAM'
     }
 }
+//singletone examle
+class Publisher{
+    static inst = null;
+    
+    constructor(){
+        if(!Publisher.inst){
+            Publisher.inst = this;
+        }
+
+        return Publisher.inst;
+    }
+}
+
+
