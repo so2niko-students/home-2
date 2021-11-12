@@ -8,7 +8,7 @@ export const weatherAPI = 'https://api.openweathermap.org/data/2.5/weather';
 
 export const weatherAPIKey = 'a34a6cba2483a2867968ae2f62ed684e';
 
-export const tgToken = '2135170220:AAHW6l9GMH7_7zRUaL6WZ6UeJj8XzlDzF98';
+export const tgToken = '2135170220:AAGLYMH_d4ZyIiBfiMea8RwQuyvxoUqHn7A';
 
 export const tgBase = 'https://api.telegram.org/bot';
 
